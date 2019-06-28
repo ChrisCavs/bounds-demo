@@ -1,5 +1,5 @@
 {
-  "name": "rallax-demo",
+  "name": "bounds-demo",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "rallax.js": "^2.0.2",
+    "bounds.js": "^1.0.0",
     "webpack": "^4.17.0",
     "webpack-cli": "^3.1.0"
   }

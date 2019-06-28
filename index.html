@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Rallax Demo</title>
+  <title>Bounds Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
   <link rel="icon" type="image/png" href="./favicon.ico" />
@@ -14,73 +14,43 @@
 
 <body>
   <header>
-    <h1>Rallax<span class="js">.js</span></h1>
-    <a class="github" href="https://github.com/ChrisCavs/rallax.js">On GitHub</a>
+    <h1>Bounds<span class="js">.js</span></h1>
+    <a class="github" href="https://github.com/ChrisCavs/bounds.js">On GitHub</a>
   </header>
   <main>
     <section class="intro">
-      <p>Rallax.js is a vanilla JS plugin that implements a dynamic parallax scrolling effect, without dependencies.  <a href="https://github.com/ChrisCavs/rallax.js">See documentation</a>.</p>
+      <p>Asynchronous boundary detection, without dependencies.</p>
+      <a href="https://github.com/ChrisCavs/bounds.js">See documentation.</a>
     </section>
-    <section class="description firstblock">
-      <div class="fixed dead">Dead</div>
-      <div class="fixed simple">Simple</div>
-      <div class="fixed parallax">Parallax</div>
-      <div class="fixed scrolling">Scrolling</div>
-    </section>
-
-    <section class="description code">
-      <pre>
-        <code><span class="comment">// example code for 'dead' block</span></code>
-        <code><span class="var">const</span> dead = <span class="method">rallax</span>(<span class="string">'.dead'</span>)</code>
-        <code class="space"></code>
-        <code>dead.<span class="method">when</span>(</code>
-          <code>() <span class="arrow">=></span> window.<span class="method">scrollY</span> > <span class="int">750</span>,</code>
-          <code>() <span class="arrow">=></span> dead.<span class="method">stop</span>()</code>
-        <code>).<span class="method">when</span>(</code>
-          <code>() <span class="arrow">=></span> window.<span class="method">scrollY</span> < <span class="int">750</span>,</code>
-          <code>() <span class="arrow">=></span> dead.<span class="method">start</span>()</code>
-      </pre>
-    </section>
-
-    <section class="description description-tips">
-      <h1 class="title">Explore a variety of <span class="bold">options</span>, including:</h1>
-      <ul class="list">
-        <li>Changing parallax speed</li>
-        <li>Conditionally disabling and enabling the effect</li>
-        <li>Compensating for mobile devices</li>
-      </ul>
-    </section>
-
-    <section class="description description-image">
-      <div class="container">
-        <img class="parallax-image" src="./test-image3.jpg" />
+    <section class="description">
+      <h2>Animation | Detection</h2>
+      <div class="box">
+        <div class="circle first"></div>
+        <div class="circle second"></div>
+        <div class="circle third"></div>
       </div>
     </section>
 
     <section class="description code">
       <pre>
-        <code><span class="comment">// first use JS to take measurements, then apply styles</span></code>
-        <code>Object.<span class="method">assign</span>(image.style, {</code>
-          <code>position: <span class="string">'relative'</span>,</code>
-          <code>top: <span class="string">`${imageTop}px`</span>,</code>
-          <code>left: <span class="string">`${imageLeft}px`</span>,</code>
-          <code>height: <span class="string">`${imageHeight}px`</span>,</code>
-          <code>width: <span class="string">`${imageWidth}px`</span></code>
+        <code><span class="var">const</span> box = document.<span class="method">querySelector</span>(<span class="string">'.box'</span>)</code>
+        <code><span class="var">const</span> circles = document.<span class="method">querySelectorAll</span>(<span class="string">'.circle'</span>)</code>
+        <code><span class="var">const</span> onEnter = () => { <span class="comment">// change color</span> }</code>
+        <code><span class="var">const</span> onLeave = () => { <span class="comment">// reset color</span> }</code>
+        <code class="space"></code>
+        <code><span class="var">const</span> boundary = <span class="method">Bounds</span>({</code>
+          <code>root: box,</code>
         <code>})</code>
-        <code></code>
-        <code><span class="comment">// add parallax using Rallax.js</span></code>
-        <code><span class="var">const</span> imageParallax = <span class="method">rallax</span>(image, {speed})</code>
+        <code class="space"></code>
+        <code>circles.<span class="method">forEach</span>(circle => {</code>
+          <code>boundary.<span class="method">watch</span>(circle, onEnter, onLeave)</code>
+        <code>})</code>
       </pre>
-    </section>
-
-    <section class="description description-final">
-      <h1 class="title">Do it all <span class="bold">effortlessly</span>, <span class="bold">quickly</span>, and <span class="bold">without jQuery</span>.</h1>
-      <h1 class="title">See the full <a href="https://github.com/ChrisCavs/rallax.js">documentation on GitHub.</a></h1>
     </section>
   </main>
   <footer>
-    <p>MIT. © 2018 Christopher Cavalea</p>
-    <a class="github" href="https://github.com/ChrisCavs/rallax.js">On GitHub</a>
+    <p>MIT. © 2019 Christopher Cavalea</p>
+    <a class="github" href="https://github.com/ChrisCavs/bounds.js">On GitHub</a>
   </footer>
 </body>
 

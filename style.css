@@ -6,3 +6,240 @@ body {
 
   font-family: 'Roboto', sans-serif;
 }
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.bold {
+  font-weight: bold;
+  color: #ffae00;
+}
+
+.js {
+  color: #ffae00;
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+.description {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 100px auto;
+}
+
+.box {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.circle {
+  position: absolute;
+  top: 50px;
+  left: -300px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  transition: translate, 5s;
+}
+
+.circle.second {
+  left: -200px;
+}
+
+.circle.third {
+  left: -100px;
+}
+
+.circle.red {
+  background-color: red;
+}
+
+.circle.move {
+  transform: translateX(800px);
+}
+
+.intro {
+  position: relative;
+  width: 60%;
+  height: 50px;
+  margin: 80px auto;
+  font-size: 20px;
+}
+
+.intro a, .intro p {
+  display: block;
+  text-align: center;
+}
+
+.github {
+  padding: 10px 15px;
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.github:hover {
+  color: white;
+  background-color: black;
+}
+
+.title {
+  font-size: 30px;
+  text-align: center;
+}
+
+ul {
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 100px;
+}
+
+.fixed {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.description-tips {
+  height: auto;
+}
+
+.description-image {
+  width: 85%;
+  height: auto;
+}
+
+.description-final {
+  height: 200px;
+}
+
+.container {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.dead {
+  left: 0;
+  background-color: rgba(211,211,211,0.5);;
+}
+
+.simple {
+  left: 200px;
+  background-color: #ffae00;
+}
+
+.parallax {
+  left: 400px;
+  background-color: rgba(211,211,211,0.5);;
+}
+
+.scrolling {
+  left: 600px;
+  background-color: #ffae00;
+}
+
+.comment {
+  color: grey;
+}
+
+.var {
+  color: blue;
+}
+
+.method {
+  color: goldenrod;
+}
+
+.string, .int {
+  color: green;
+}
+
+.array {
+  color: blue;
+}
+
+.code {
+  font-size: 16px;
+  border-radius: 10px;
+  height: auto;
+  padding: 40px;
+  background-color: rgba(211,211,211,0.5);
+}
+
+@media only screen and (max-width: 600px) {
+	.description {
+		width: 98%;
+	}
+
+	.parallax {
+		left: 0;
+		top: 150px;
+	}
+
+	.scrolling {
+		left: 200px;
+		top: 150px;
+	}
+
+	.intro {
+		height: 150px;
+	}
+
+	.firstblock {
+		height: 350px;
+	}
+
+	.code {
+		padding: 10px;
+	}
+
+	.code pre {
+		margin-left: -60px;
+	}
+
+	code {
+		font-size: 12px;
+	}
+
+	footer {
+		padding: 0;
+	}
+
+	.description-image {
+		display: none;
+	}
+}
