@@ -22,28 +22,52 @@
       <p>Asynchronous boundary detection, without dependencies.</p>
       <a href="https://github.com/ChrisCavs/bounds.js">See documentation.</a>
     </section>
+
     <section class="description">
       <h2>Animation | Detection</h2>
       <div class="box">
-        <div class="circle first"></div>
-        <div class="circle second"></div>
-        <div class="circle third"></div>
+        <div class="circle"></div>
       </div>
     </section>
 
     <section class="description code">
       <pre>
         <code><span class="var">const</span> box = document.<span class="method">querySelector</span>(<span class="string">'.box'</span>)</code>
-        <code><span class="var">const</span> circles = document.<span class="method">querySelectorAll</span>(<span class="string">'.circle'</span>)</code>
+        <code><span class="var">const</span> circle = document.<span class="method">querySelector</span>(<span class="string">'.circle'</span>)</code>
         <code><span class="var">const</span> onEnter = () => { <span class="comment">// change color</span> }</code>
         <code><span class="var">const</span> onLeave = () => { <span class="comment">// reset color</span> }</code>
         <code class="space"></code>
         <code><span class="var">const</span> boundary = <span class="method">Bounds</span>({</code>
           <code>root: box,</code>
+          <code>threshold: 1.0</code>
         <code>})</code>
         <code class="space"></code>
-        <code>circles.<span class="method">forEach</span>(circle => {</code>
-          <code>boundary.<span class="method">watch</span>(circle, onEnter, onLeave)</code>
+        <code>boundary.<span class="method">watch</span>(circle, onEnter, onLeave)</code>
+        <code class="space"></code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Lazy-Loading Images</h2>
+      <div class="text-box">Image source set.</div>
+      <img data-src="https://images.unsplash.com/photo-1537637677791-8c6d8a2bf7d6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" data-index="0" />
+      <div class="text-box">Image source set.</div>
+      <img data-src="https://images.unsplash.com/photo-1524246218500-3dad00b8975d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" data-index="1" />
+      <div class="text-box">Image source set.</div>
+      <img data-src="https://images.unsplash.com/photo-1542732056-648731297c97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" data-index="2" />
+    </section>
+
+    <section class="description code">
+      <pre>
+        <code><span class="var">const</span> images = document.<span class="method">querySelectorAll</span>(<span class="string">'img'</span>)</code>
+        <code><span class="var">const</span> onEnter = () => { <span class="comment">// load image</span> }</code>
+        <code class="space"></code>
+        <code><span class="var">const</span> boundary = <span class="method">Bounds</span>({</code>
+          <code>margins: {bottom: <span class="num">100</span>}</code>
+        <code>})</code>
+        <code class="space"></code>
+        <code>images.<span class="method">forEach</span>(image => {</code>
+          <code>boundary.<span class="method">watch</span>(image, onEnter)</code>
         <code>})</code>
       </pre>
     </section>
