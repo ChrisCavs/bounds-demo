@@ -45,7 +45,7 @@ h1, h2 {
   width: 100px;
   height: 100px;
   border-radius: 10px;
-  border: 1px solid #ffae00;
+  border: 2px solid #ffae00;
 }
 
 .circle {
@@ -67,6 +67,10 @@ h1, h2 {
   width: 80%;
   margin: 100px auto;
   font-size: 20px;
+}
+
+.images-section {
+  padding-top: 50px;
 }
 
 .intro a, .intro p {
