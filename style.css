@@ -3,6 +3,7 @@ body {
 	padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
+  overflow-x: hidden;
 
   font-family: 'Roboto', sans-serif;
 }
@@ -91,6 +92,7 @@ h1, h2 {
 
 img {
   width: 450px;
+  max-width: 100%;
   height: auto;
 }
 
@@ -146,15 +148,20 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    padding: 0 10px;
+  }
+
 	.description {
 		width: 98%;
 	}
 
   .description.code {
-    width: 80%;
+    width: 94%;
   }
 
 	.intro {
+    width: 90%;
 		margin: 75px auto;
 	}
 
@@ -163,7 +170,7 @@ footer {
 	}
 
 	.code pre {
-		margin-left: -60px;
+		margin-left: -83px;
 	}
 
 	code {
@@ -173,6 +180,10 @@ footer {
 	footer {
 		padding: 0;
 	}
+
+  footer p {
+    width: 60%;
+  }
 
 	.description-image {
 		display: none;
